@@ -1,2 +1,3 @@
-# smart_city
-AI-powered Smart City Assistant built with Streamlit and Hugging Face Transformers featuring real-time dashboard, citizen feedback analysis, document summarization, and eco-advisory system.
+🏙️ Smart City 360° Assistant
+
+An AI-powered Smart City Assistant built using Streamlit and Hugging Face Transformers to simulate intelligent urban management systems.
