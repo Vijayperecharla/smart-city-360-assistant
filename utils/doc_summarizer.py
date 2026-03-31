@@ -4,9 +4,10 @@ import os
 import tempfile
 from transformers import pipeline
 from PyPDF2 import PdfReader
+os.environ["TRANSFORMERS_CACHE"] = "/tmp"
 
 # Initialize summarization model (replace with Granite later if needed)
-summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 def extract_text_from_pdf(file_path):
     try:
