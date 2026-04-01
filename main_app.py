@@ -22,7 +22,30 @@ with tab1:
     st.subheader("Real-Time Metrics")
     if st.button("Refresh Metrics"):
         metrics = get_city_metrics()
-        st.text_area("City Metrics", metrics, height=250)
+    
+        # Convert to dictionary
+        data = {}
+        for line in metrics.split("\n"):
+            key, value = line.split(":")
+            data[key.strip()] = value.strip()
+    
+        # Display as columns (cards style)
+        col1, col2, col3 = st.columns(3)
+    
+        keys = list(data.keys())
+    
+        for i, key in enumerate(keys):
+            with [col1, col2, col3][i % 3]:
+                st.metric(label=key, value=data[key])
+    
+        # Optional chart (dummy visualization)
+        st.subheader("City Metrics Overview")
+        df = pd.DataFrame({
+            "Metric": list(data.keys()),
+            "Value": [i + 1 for i in range(len(data))]
+        })
+    
+        st.bar_chart(df.set_index("Metric"))
 
 # TAB 2
 with tab2:
