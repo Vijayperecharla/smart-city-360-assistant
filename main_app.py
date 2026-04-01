@@ -32,7 +32,7 @@ with tab2:
     if st.button("Submit Feedback"):
         result = handle_feedback(issue)
         st.success("Feedback Processed:")
-        st.write(result)
+        st.text(result)
 
 # TAB 3
 with tab3:
@@ -53,4 +53,4 @@ with tab4:
     if st.button("Get Advice"):
         result = eco_advice(query)
         st.success("Eco Advice:")
-        st.write(result)
+        st.text(result)
