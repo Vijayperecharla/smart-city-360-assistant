@@ -35,7 +35,7 @@ def handle_feedback(issue_text):
 
     try:
         # Summarize feedback
-        summary = summarizer(issue_text, max_length=50, min_length=15, do_sample=False)[0]['summary_text']
+        summary = get_summarizer()(issue_text, max_length=50, min_length=15, do_sample=False)[0]['summary_text']
         department = classify_feedback(issue_text)
 
         response = f"📝 **Summary:** {summary}\n📌 **Routed to:** {department}"
